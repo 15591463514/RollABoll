@@ -3,9 +3,28 @@ const { ccclass, property } = _decorator
 
 @ccclass('Rotate')
 export class Rotate extends Component {
-    start() {}
+	@property
+	rotateSpeedX: number = 0
+	@property
+	rotateSpeedY: number = 0
+	@property
+	rotateSpeedZ: number = 0
 
-    update(deltaTime: number) {
-        console.log('this.node.eulerAngles', this.node.eulerAngles)
-    }
+	start() {}
+
+	update(deltaTime: number) {
+		this.rotate(
+			deltaTime * this.rotateSpeedX,
+			deltaTime * this.rotateSpeedY,
+			deltaTime * this.rotateSpeedZ,
+		)
+	}
+
+	rotate(angleX, angleY, angleZ) {
+		this.node.eulerAngles = new Vec3(
+			this.node.eulerAngles.x + angleX,
+			this.node.eulerAngles.y + angleY,
+			this.node.eulerAngles.z + angleZ,
+		)
+	}
 }

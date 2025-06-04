@@ -3,5 +3,8 @@
   "uuid": "ddb9b34e-1833-4d6c-9fd9-470e6486401b",
   "creator": {
     "version": "3.8.6"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
   }
 }
