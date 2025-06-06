@@ -13,11 +13,7 @@ export class Rotate extends Component {
 	start() {}
 
 	update(deltaTime: number) {
-		this.rotate(
-			deltaTime * this.rotateSpeedX,
-			deltaTime * this.rotateSpeedY,
-			deltaTime * this.rotateSpeedZ,
-		)
+		this.rotate(deltaTime * this.rotateSpeedX, deltaTime * this.rotateSpeedY, deltaTime * this.rotateSpeedZ)
 	}
 
 	rotate(angleX, angleY, angleZ) {
